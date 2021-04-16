@@ -157,19 +157,18 @@ public class OptionConverter {
     return dEfault;
   }
 
-  //FIXME: change the int to Integer in the method call.
-  public static int toInt(String value, int dEfault) {
-    if(value != null) {
-      String s = value.trim();
-      try {
-	return Integer.valueOf(s).intValue();
+  public static Integer toInt(String value, int dEfault) {
+      if(value != null) {
+          String s = value.trim();
+          try {
+              return Integer.valueOf(s);
+          }
+          catch (NumberFormatException e) {
+              LogLog.error("[" + s + "] is not in proper int form.");
+              e.printStackTrace();
+          }
       }
-      catch (NumberFormatException e) {
-	 LogLog.error("[" + s + "] is not in proper int form.");
-	e.printStackTrace();
-      }
-    }
-    return dEfault;
+      return (Integer) dEfault;
   }
 
   /**
