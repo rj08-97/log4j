@@ -407,9 +407,8 @@ public class PatternParser {
     }
   }
 
-  //TODO: Add a static method call to the inner class
 
-  private class LiteralPatternConverter extends PatternConverter {
+  private static class LiteralPatternConverter extends PatternConverter {
     private String literal;
 
     LiteralPatternConverter(String value) {
