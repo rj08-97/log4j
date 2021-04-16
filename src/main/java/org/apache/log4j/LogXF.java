@@ -264,7 +264,6 @@ public abstract class LogXF {
      * @param params       parameters, may be null.
      */
 
-    //TODO: Edit the statement msg from += to msg + statement
     public static void entering(final Logger logger,
                                 final String sourceClass,
                                 final String sourceMethod,
@@ -275,9 +274,9 @@ public abstract class LogXF {
                 String delim = "{";
                 for (int i = 0; i < params.length; i++) {
                     try {
-                        msg += delim + params[i];
+                        msg = msg + delim + params[i];
                     } catch(Throwable ex) {
-                        msg += delim + "?";
+                        msg = msg + delim + "?";
                     }
                     delim = ",";
                 }
