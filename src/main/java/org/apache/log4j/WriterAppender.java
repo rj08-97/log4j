@@ -233,7 +233,6 @@ public class WriterAppender extends AppenderSkeleton {
      specified incorrectly the writer will be opened using the default
      system encoding (an error message will be printed to the loglog.  */
 
-  //TODO:Remove or simplify the redundant if statement.
   protected
   OutputStreamWriter createWriter(OutputStream os) {
     OutputStreamWriter retval = null;
@@ -243,9 +242,7 @@ public class WriterAppender extends AppenderSkeleton {
       try {
 	retval = new OutputStreamWriter(os, enc);
       } catch(IOException e) {
-          if (e instanceof InterruptedIOException) {
               Thread.currentThread().interrupt();
-          }
 	      LogLog.warn("Error initializing output writer.");
 	      LogLog.warn("Unsupported encoding?");
       }
