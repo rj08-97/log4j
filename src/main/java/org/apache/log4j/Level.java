@@ -207,6 +207,8 @@ public class Level extends Priority implements Serializable {
      * @throws ClassNotFoundException
      *             if class not found.
      */
+
+    //TODO: Remove the unnecessary, and redundant if statement.
     private void readObject(final ObjectInputStream s) throws IOException, ClassNotFoundException {
         s.defaultReadObject();
         level = s.readInt();
