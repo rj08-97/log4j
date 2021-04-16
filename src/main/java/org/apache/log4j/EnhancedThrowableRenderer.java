@@ -46,6 +46,8 @@ public final class EnhancedThrowableRenderer implements ThrowableRenderer {
     /**
      * Construct new instance.
      */
+
+    //TODO: Print stack trace within the catch statement.
     public EnhancedThrowableRenderer() {
         try {
             Class[] noArgs = null;
