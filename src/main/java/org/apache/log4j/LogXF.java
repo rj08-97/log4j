@@ -197,6 +197,7 @@ public abstract class LogXF {
      * @param sourceClass  source class, may be null.
      * @param sourceMethod method, may be null.
      */
+
     public static void entering(final Logger logger,
                                 final String sourceClass,
                                 final String sourceMethod) {
@@ -214,6 +215,7 @@ public abstract class LogXF {
      * @param sourceMethod method, may be null.
      * @param param        parameter, may be null.
      */
+
     public static void entering(final Logger logger,
                                 final String sourceClass,
                                 final String sourceMethod,
@@ -261,6 +263,8 @@ public abstract class LogXF {
      * @param sourceMethod method, may be null.
      * @param params       parameters, may be null.
      */
+
+    //TODO: Edit the statement msg from += to msg + statement
     public static void entering(final Logger logger,
                                 final String sourceClass,
                                 final String sourceMethod,
