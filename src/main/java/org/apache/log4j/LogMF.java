@@ -149,6 +149,7 @@ public final class LogMF extends LogXF {
      * @param arguments arguments, may be null or mismatched.
      * @return Message string or null
      */
+    //FIXME: Fix the statement retval from += to retval +
     private static String format(final String pattern,
                                  final Object[] arguments) {
         if (pattern == null) {
