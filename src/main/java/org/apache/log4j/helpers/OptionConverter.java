@@ -157,9 +157,8 @@ public class OptionConverter {
     return dEfault;
   }
 
-  public
-  static
-  int toInt(String value, int dEfault) {
+  //FIXME: change the int to Integer in the method call.
+  public static int toInt(String value, int dEfault) {
     if(value != null) {
       String s = value.trim();
       try {
