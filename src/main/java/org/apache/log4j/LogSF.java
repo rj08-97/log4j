@@ -48,6 +48,8 @@ public final class LogSF extends LogXF {
      * @param arguments arguments.
      * @return Message string
      */
+
+    //FIXME: Fix the statement retval from += to retval +
     private static String format(final String pattern,
                                  final Object[] arguments) {
         if (pattern != null) {
