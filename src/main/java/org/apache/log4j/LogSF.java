@@ -49,7 +49,6 @@ public final class LogSF extends LogXF {
      * @return Message string
      */
 
-    //FIXME: Fix the statement retval from += to retval +
     private static String format(final String pattern,
                                  final Object[] arguments) {
         if (pattern != null) {
@@ -62,7 +61,7 @@ public final class LogSF extends LogXF {
                     retval += pattern.substring(prev, pos);
                     if (pos + 1 < pattern.length() && pattern.charAt(pos+1) == '}') {
                         if(arguments != null && count < arguments.length) {
-                            retval += arguments[count++];
+                            retval = retval + arguments[count++];
                         } else {
                             retval += "{}";
                         }
@@ -72,7 +71,7 @@ public final class LogSF extends LogXF {
                         prev = pos + 1;
                     }
                 } else {
-                    retval += pattern.substring(prev, pos - 1) + "{";
+                    retval =retval + pattern.substring(prev, pos - 1) + "{";
                     prev = pos + 1;
                 }
                 pos = pattern.indexOf("{", prev);
