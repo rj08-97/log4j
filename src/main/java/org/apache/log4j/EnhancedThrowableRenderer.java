@@ -47,7 +47,6 @@ public final class EnhancedThrowableRenderer implements ThrowableRenderer {
      * Construct new instance.
      */
 
-    //TODO: Print stack trace within the catch statement.
     public EnhancedThrowableRenderer() {
         try {
             Class[] noArgs = null;
@@ -55,6 +54,7 @@ public final class EnhancedThrowableRenderer implements ThrowableRenderer {
             Class ste = Class.forName("java.lang.StackTraceElement");
             getClassNameMethod = ste.getMethod("getClassName", noArgs);
         } catch(Exception ex) {
+            ex.printStackTrace();
         }
     }
 
