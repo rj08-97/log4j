@@ -149,7 +149,6 @@ public final class LogMF extends LogXF {
      * @param arguments arguments, may be null or mismatched.
      * @return Message string or null
      */
-    //FIXME: Fix the statement retval from += to retval +
     private static String format(final String pattern,
                                  final Object[] arguments) {
         if (pattern == null) {
@@ -165,7 +164,7 @@ public final class LogMF extends LogXF {
                       pattern.charAt(pos+1) >= '0' &&
                       pattern.charAt(pos+1) <= '9') {
                     int index = pattern.charAt(pos+1) - '0';
-                    retval += pattern.substring(prev, pos);
+                    retval = retval + pattern.substring(prev, pos);
                     if (formatted[index] == null) {
                          if (arguments == null || index >= arguments.length) {
                             formatted[index] = pattern.substring(pos, pos+3);
@@ -173,14 +172,14 @@ public final class LogMF extends LogXF {
                             formatted[index] = formatObject(arguments[index]);
                          }
                     }
-                    retval += formatted[index];
+                    retval = retval + formatted[index];
                     prev = pos + 3;
                     pos = pattern.indexOf('{', prev);
                 } else {
                     pos = pattern.indexOf('{', pos + 1);
                 }
             }
-            retval += pattern.substring(prev);
+            retval = retval + pattern.substring(prev);
             return retval;
         }
         try {
