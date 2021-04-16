@@ -232,6 +232,8 @@ public class WriterAppender extends AppenderSkeleton {
      <code>encoding</code> property.  If the encoding value is
      specified incorrectly the writer will be opened using the default
      system encoding (an error message will be printed to the loglog.  */
+
+  //TODO:Remove or simplify the redundant if statement.
   protected
   OutputStreamWriter createWriter(OutputStream os) {
     OutputStreamWriter retval = null;
